@@ -14,7 +14,11 @@ base.html 구조 작성
 8. `python manage.py makemigrations`
 9. `python manage.py migrate`
 ---
-7. 앱폴더 `articles`폴더에도 urls.py 만들어서 중복되는 함수 최소화(이중구조)
+10. .gitignore 에 image/ 폴더 추가
+11. `pip freeze >> requirements.txt`
+---
+12. 프로젝트 urls에 include 구조 작성 `path('posts/', include('posts.urls')),`
+13. 앱폴더 `posts`폴더에도 urls.py 만들어서 중복되는 함수 최소화(이중구조)
 ---
 8. 앱폴더에 urls.py 추가하고 아래 문장 기재
 ```py
