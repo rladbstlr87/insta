@@ -4,10 +4,10 @@
 2. .gitignore
 3. Django 설치
 ---
-4. `django-admin startproject board .`
+4. `django-admin startproject insta .`
 ---
-5. `django-admin startapp articles`
-6. `settings.py`에서 앱폴더 등록0
+5. `django-admin startapp posts`
+6. `settings.py`에서 앱폴더 등록
 base.html 구조 작성
 ---
 7. 앱폴더 `articles`폴더에도 urls.py 만들어서 중복되는 함수 최소화(이중구조)
