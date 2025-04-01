@@ -10,3 +10,6 @@ class User(AbstractUser):
         crop=['middle', 'center'],
         upload_to='profile',
     )
+    # post_set (FK)
+    # comment_set
+    # post_set => like_postes (MMF)
