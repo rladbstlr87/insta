@@ -13,3 +13,6 @@ class User(AbstractUser):
     # post_set (FK)
     # comment_set
     # post_set => like_postes (MMF)
+
+    followings = models.ManyToManyField('self', related_name='followers', symmetrical=False)
+    # related_name='followers'하는 순간 `follwers = `가 생김
