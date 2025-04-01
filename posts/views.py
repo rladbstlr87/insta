@@ -43,3 +43,15 @@ def comment_create(request, post_id):
         comment.post_id = post_id
         comment.save()
         return redirect('posts:index')
+    
+def like(request, post_id):
+    user = request.user
+    post = Post.objects.get(id=post_id)
+
+  # if post in user.like_posts.all(): 여기서는 related_name으로 접근
+    if user in post.like_users.all(): # Post 클래스에 like_users 컬럼 만들었던걸로 접근
+        post.like_users.remove(user)
+    else:
+        post.like_users.add(user)
+
+    return redirect('posts:index')
