@@ -7,12 +7,12 @@ from django.conf import settings
 class Post(models.Model):
     content = models.TextField()
     created_at = models.DateTimeField(auto_now_add=True)
-    # image = models.ImageField(upload_to='image')
-    image = ResizedImageField(
-        size=[500, 500],
-        crop=['middle', 'center'],
-        upload_to='image/%Y/%m',
-    )
+    image = models.ImageField(upload_to='image')
+    # image = ResizedImageField(
+    #     size=[500, 500],
+    #     crop=['middle', 'center'],
+    #     upload_to='image/%Y/%m',
+    # )
     # 작성자
     user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
 
