@@ -6,4 +6,35 @@
         {% include '_card.html' %}
         {% endfor %}
     </div>
+    <script>
+        let likeBtns = document.querySelectorAll('i.like')
+        
+        likeBtns.forEach(function(likeBtn) {
+            likeBtn.addEventListener('click', function(e){
+                const postId = e.target.dataset.postId
+
+                likeRequest(likeBtn, postId)
+            })
+        })
+
+        let likeRequest = async (btn, postId) => {
+            let likeURL = `/posts/${postId}/like-async`
+            let res = await fetch(likeURL)
+
+            // 넘겨받은 데이터로 true/false만 바뀌게 되었다. 이 코드 아래에 console.log(result)추가해서 확인할 수 있다
+            let result = await res.json()
+            // console.log(result)
+
+            if (result.status) {
+                btn.style.color = 'red'
+                btn.classList.remove('bi-heart')
+                btn.classList.add('bi-heart-fill')
+            } else {
+                btn.style.color = 'black'
+                btn.classList.remove('bi-heart-fill')
+                btn.classList.add('bi-heart')
+            }
+            btn.querySelector('span').innerHTML = result.count
+        }
+    </script>
 {% endblock %}
