@@ -1,7 +1,11 @@
 {% load django_bootstrap5 %}
 <div class="card my-3 mx-3 col-12 col-md-6 col-xl-4" style="width: 18rem; display: flex; flex-direction: column; height: 100%;">
     <div class="card-header">
-        <img class="rounded-circle" src="{{post.user.profile_image.url}}" alt="" width="35px">
+      {% if post.user.profile_image %}
+        <img class="rounded-circle" src="{{ post.user.profile_image.url }}" alt="" width="35px">
+      {% else %}
+        <img class="rounded-circle" src="{% static 'default.webp' %}" alt="" width="35px">
+      {% endif %}
         <a href="{% url 'accounts:profile' post.user.username %}">{{post.user.username}}</a>
     </div>
     <img src="{{post.image.url}}" class="card-img-top" alt="...">
