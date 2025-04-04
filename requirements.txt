@@ -1,7 +1,10 @@
 asgiref==3.8.1
 Django==5.1.7
+django-appconf==1.1.0
 django-bootstrap5==25.1
+django-imagekit==5.0.0
 django-resized==1.0.3
+pilkit==3.0
 pillow==11.1.0
 sqlparse==0.5.3
 tzdata==2025.2
