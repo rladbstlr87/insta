@@ -4,6 +4,7 @@ After=syslog.target
 
 [Service]
 User=ubuntu
+Group=ubuntu
 ExecStart=/home/ubuntu/insta/venv/bin/uwsgi -i /home/ubuntu/insta/.config/uwsgi/insta.ini
 
 
