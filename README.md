@@ -26,37 +26,3 @@ urlpatterns = [
     path('', views.index),
 ]
 ```
-
-# 배포
-1. AWS를 통해서 컴터 한대 빌리고
-2. 빌린 컴터에 python, django 설치하고
-3. 프로젝트 옮겨오고
-...
-
-## **django pjt**
-
-### **0. settings.py**
-
-- ALLOWED_HOSTS
-    - EC2 서버주소를 등록
-    - 편하게 배포하기 위하여 `*` 로 등록 후 추후 수정가능
-- 
-```
-# settings.py
-ALLOWED_HOSTS = [
-    '.compute.amazonaws.com',
-    '*',
-]
-```
-
-### **1. 의존성 저장**
-
-- freeze
-
-```
-pip freeze > requirements.txt
-```
-
-### **2. git push**
-
-- 원격저장소에 업로드 (add, commit, push)
